@@ -1,0 +1,233 @@
+// ignore_for_file: prefer_const_constructors
+
+import 'package:diy_boox/core/utils/app_extenshions.dart';
+import 'package:diy_boox/provider/supplier_provider.dart';
+import 'package:diy_boox/screens/menu_items/invoicing/invoices/add_product.dart';
+import 'package:diy_boox/widgets/custom_slider.dart';
+import 'package:diy_boox/widgets/custom_tool_bar.dart';
+import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
+import '../../../../core/utils/color_constant.dart';
+import '../../../../widgets/common_image_view.dart';
+
+class SuppliersScreen extends StatefulWidget {
+  const SuppliersScreen({Key? key}) : super(key: key);
+
+  @override
+  State<SuppliersScreen> createState() => _SuppliersScreenState();
+}
+
+class _SuppliersScreenState extends State<SuppliersScreen> {
+  TextEditingController controller = TextEditingController();
+
+  @override
+  void initState() {
+    Provider.of<SupplierProvider>(context, listen: false).getSuppliersList();
+    super.initState();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: const Color(0xffFBFBFB),
+      body: SafeArea(
+          child: Column(
+        children: [
+          CustomToolBar(
+              searchText: (e) {
+                Provider.of<SupplierProvider>(context, listen: false)
+                    .searchByInv(e);
+              },
+              search: () {},
+              controller: controller,
+              onTap1: () {},
+              onTap2: () {}),
+          Consumer<SupplierProvider>(
+            builder: (context, value, child) {
+              if (value.isLoading) {
+                child = const Center(
+                  child: CircularProgressIndicator(
+                    color: Color(0xff6661B8),
+                  ),
+                );
+              } else if (value.suppliersList.isEmpty) {
+                child = Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    CommonImageView(
+                      svgPath: 'assets/no_record_found.svg',
+                    ),
+                    const Padding(
+                      padding: EdgeInsets.fromLTRB(0, 20, 0, 0),
+                      child: Text(
+                        'No Record Found!',
+                        style: TextStyle(
+                            fontFamily: 'Sans',
+                            fontSize: 20,
+                            color: Color(0xff828282),
+                            fontWeight: FontWeight.w400),
+                      ),
+                    ),
+                    const Padding(
+                      padding: EdgeInsets.fromLTRB(20, 20, 20, 0),
+                      child: Text(
+                        'You can create your first record by clicking the plus icon below',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                            fontFamily: 'Sans',
+                            fontSize: 20,
+                            color: Color(0xff828282),
+                            fontWeight: FontWeight.w400),
+                      ),
+                    )
+                  ],
+                );
+              } else {
+                child = Column(
+                  children: [
+                    Column(
+                      children: value.suppliersList.map((e) {
+                        return Padding(
+                          padding: EdgeInsets.fromLTRB(10, 20, 10, 0),
+                          child: GestureDetector(
+                              onTap: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => AddProduct()));
+                              },
+                              child: CustomSlider(
+                                widget: Container(
+                                  padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
+                                  height: 110,
+                                  width: MediaQuery.of(context).size.width,
+                                  decoration: BoxDecoration(
+                                      boxShadow: [
+                                        BoxShadow(
+                                          blurRadius: 1,
+                                        )
+                                      ],
+                                      color: Colors.white,
+                                      borderRadius: BorderRadius.circular(10)),
+                                  child: Column(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceBetween,
+                                        children: [
+                                          Column(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: [
+                                              const Text(
+                                                'Suppliers',
+                                                style: TextStyle(
+                                                  fontWeight: FontWeight.w400,
+                                                  fontSize: 14,
+                                                  fontFamily: 'Sans',
+                                                  color: Color(0xff828282),
+                                                ),
+                                              ),
+                                              Text(
+                                                e.supplierName,
+                                                style: TextStyle(
+                                                  fontWeight: FontWeight.w600,
+                                                  fontSize: 14,
+                                                  fontFamily: 'Sans',
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ],
+                                      ),
+                                      Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceBetween,
+                                        children: [
+                                          Column(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: [
+                                              const Text(
+                                                'Created On',
+                                                style: TextStyle(
+                                                  fontWeight: FontWeight.w400,
+                                                  fontSize: 14,
+                                                  fontFamily: 'Sans',
+                                                  color: Color(0xff828282),
+                                                ),
+                                              ),
+                                              Text(
+                                                e.createdOn.toDateTimeFormat(),
+                                                style: TextStyle(
+                                                  fontWeight: FontWeight.w600,
+                                                  fontSize: 14,
+                                                  fontFamily: 'Sans',
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                          Column(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.end,
+                                            children: [
+                                              const Text(
+                                                'Created By',
+                                                style: TextStyle(
+                                                  fontWeight: FontWeight.w400,
+                                                  fontSize: 14,
+                                                  fontFamily: 'Sans',
+                                                  color: Color(0xff828282),
+                                                ),
+                                              ),
+                                              SizedBox(
+                                                width: 100,
+                                                child: Text(
+                                                  e.createdByName,
+                                                  maxLines: 3,
+                                                  textAlign: TextAlign.right,
+                                                  softWrap: true,
+                                                  style: TextStyle(
+                                                    fontWeight: FontWeight.w600,
+                                                    fontSize: 14,
+                                                    fontFamily: 'Sans',
+                                                  ),
+                                                ),
+                                              ),
+                                            ],
+                                          )
+                                        ],
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                archive: () {},
+                                delete: () {
+                                  // value.
+                                },
+                              )),
+                        );
+                      }).toList(),
+                    )
+                  ],
+                );
+              }
+              return child;
+            },
+          ),
+        ],
+      )),
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: ColorConstant.primaryColor,
+        onPressed: () {},
+        child: const Icon(
+          Icons.add,
+          size: 40,
+        ),
+      ),
+    );
+  }
+}
