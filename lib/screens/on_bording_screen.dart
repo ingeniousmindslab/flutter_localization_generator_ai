@@ -19,7 +19,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
       body: SafeArea(
         child: Column(
           children: [
-            Padding(
+            const Padding(
               padding: EdgeInsets.fromLTRB(20, 20, 20, 0),
               child: Row(
                 children: [
@@ -36,20 +36,20 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
               ),
             ),
             Padding(
-              padding: EdgeInsets.fromLTRB(20, 5, 20, 20),
+              padding: const EdgeInsets.fromLTRB(20, 5, 20, 20),
               child: LinearProgressBar(
                 maxSteps: 10,
                 progressType:
                     LinearProgressBar.progressTypeLinear, // Use Linear progress
                 currentStep: 5,
-                progressColor: Color(0xff6661B8),
-                backgroundColor: Color(0xffCCD6DB),
+                progressColor: const Color(0xff6661B8),
+                backgroundColor: const Color(0xffCCD6DB),
               ),
             ),
             Expanded(
               child: PageView(
                 children: [
-                  Page1(),
+                  const Page1(),
                   Page2(),
                   Page3(),
                   Page4(),

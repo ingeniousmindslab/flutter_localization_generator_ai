@@ -41,7 +41,7 @@ Future<void> main() async {
         ChangeNotifierProvider(create: (ctx) => di.sl<ReportProvider>()),
         ChangeNotifierProvider(create: (ctx) => di.sl<DriveFileProvider>()),
       ],
-      child: MyApp(),
+      child: const MyApp(),
     ),
   );
 }
@@ -51,7 +51,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Capium',
       home: SplashScreen(),

@@ -43,10 +43,10 @@ class _AddProductState extends State<AddProduct> {
             onPressed: () {
               Navigator.pop(context);
             },
-            icon: Icon(Icons.arrow_back)),
+            icon: const Icon(Icons.arrow_back)),
         title: Text(
           'Details (${widget.invNum})',
-          style: TextStyle(
+          style: const TextStyle(
             fontSize: 18,
             fontFamily: 'Sans',
             fontWeight: FontWeight.w400,
@@ -59,15 +59,15 @@ class _AddProductState extends State<AddProduct> {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => NotificationScreen()));
+                        builder: (context) => const NotificationScreen()));
               },
-              icon: Icon(Icons.notifications_none))
+              icon: const Icon(Icons.notifications_none))
         ],
       ),
       body: SingleChildScrollView(child: Consumer<ProductsProvider>(
         builder: (context, value, child) {
           if (value.isLoading) {
-            return Center(child: CircularProgressIndicator());
+            return const Center(child: CircularProgressIndicator());
           } else {
             price.value = TextEditingValue(
                 text: selectedValue == null
@@ -92,7 +92,7 @@ class _AddProductState extends State<AddProduct> {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsets.fromLTRB(20, 0, 20, 10),
+                  padding: const EdgeInsets.fromLTRB(20, 0, 20, 10),
                   child: CustomDropDownButton(
                     items: value.itemList.map((e) => e.itemName).toList(),
                     selectedValue: selectedValue ?? value.itemList[0].itemName,
@@ -117,7 +117,7 @@ class _AddProductState extends State<AddProduct> {
                   ),
                 ),
                 Padding(
-                    padding: EdgeInsets.fromLTRB(20, 0, 20, 10),
+                    padding: const EdgeInsets.fromLTRB(20, 0, 20, 10),
                     child: Text(
                       selectedValue == null
                           ? ""
@@ -126,13 +126,13 @@ class _AddProductState extends State<AddProduct> {
                                 (element) => element.itemName == selectedValue,
                               )
                               .description,
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontWeight: FontWeight.w400,
                         fontFamily: 'Sans',
                         fontSize: 16,
                       ),
                     )),
-                Padding(
+                const Padding(
                   padding: EdgeInsets.fromLTRB(20, 10, 0, 10),
                   child: Text(
                     'Qty',
@@ -147,7 +147,9 @@ class _AddProductState extends State<AddProduct> {
                   controller: qty,
                   kType: TextInputType.number,
                   onChanged: (value) {
-                    if (selectedValue == null || price.text.isEmpty || value == "") {
+                    if (selectedValue == null ||
+                        price.text.isEmpty ||
+                        value == "") {
                       amount.text = "";
                       return;
                     } else {
@@ -157,7 +159,7 @@ class _AddProductState extends State<AddProduct> {
                     }
                   },
                 ),
-                Padding(
+                const Padding(
                   padding: EdgeInsets.fromLTRB(20, 10, 0, 10),
                   child: Text(
                     'Price (GBP)',
@@ -188,13 +190,15 @@ class _AddProductState extends State<AddProduct> {
                   onChanged: (v) {},
                 ),
                 Padding(
-                  padding: EdgeInsets.fromLTRB(20, 50, 20, 0),
+                  padding: const EdgeInsets.fromLTRB(20, 50, 20, 0),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      CustomSmallTransButton(onTap: () {
-                        Navigator.pop(context);
-                      }, text: 'Cancel'),
+                      CustomSmallTransButton(
+                          onTap: () {
+                            Navigator.pop(context);
+                          },
+                          text: 'Cancel'),
                       CustomSmallButton(
                           text: 'Save',
                           onTap: () {

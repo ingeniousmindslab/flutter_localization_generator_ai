@@ -23,7 +23,7 @@ class CustomToast {
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
           color: backgroundColor ?? Colors.black45,
-          boxShadow: [
+          boxShadow: const [
             BoxShadow(
               color: Color(0x3F000000),
               blurRadius: 5,
@@ -39,7 +39,7 @@ class CustomToast {
               iconData,
               color: textColor ?? Colors.white,
             ),
-            SizedBox(width: 12.0),
+            const SizedBox(width: 12.0),
           ],
           Text(
             message,

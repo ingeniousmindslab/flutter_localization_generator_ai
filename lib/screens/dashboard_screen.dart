@@ -73,18 +73,18 @@ class _DashboardScreenState extends State<DashboardScreen> {
   List<_TopExpenseCategories>? topExpenseCategories;
 
   List<Color> colors = [
-    Color(0xffB49AFF),
-    Color(0xff6042A5),
-    Color(0xff7761CD),
-    Color(0xffAB60CC),
+    const Color(0xffB49AFF),
+    const Color(0xff6042A5),
+    const Color(0xff7761CD),
+    const Color(0xffAB60CC),
   ];
 
   List<Color> topExpenseColors = [
-    Color(0xffB49AFF),
-    Color(0xff6042A5),
-    Color(0xffAB60CC),
-    Color(0xff7761CD),
-    Color(0xffAB60CC),
+    const Color(0xffB49AFF),
+    const Color(0xff6042A5),
+    const Color(0xffAB60CC),
+    const Color(0xff7761CD),
+    const Color(0xffAB60CC),
   ];
 
   @override
@@ -172,20 +172,20 @@ class _DashboardScreenState extends State<DashboardScreen> {
 
     topExpenseCategories = dashboardProvider.topExpenses.map((data) {
       return _TopExpenseCategories(
-          x: data.categoryName!,
-          y: data.totalAmount!,
+          x: data.categoryName,
+          y: data.totalAmount,
           label: data.totalAmount.toString());
     }).toList();
 
     return Scaffold(
-      backgroundColor: Color(0xffF2F2F2),
+      backgroundColor: const Color(0xffF2F2F2),
       body: dashboardProvider.isLoading == false
           ? SingleChildScrollView(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   //text
-                  Padding(
+                  const Padding(
                     padding: EdgeInsets.fromLTRB(20, 15, 0, 0),
                     child: Text(
                       'Saint Thomas PVT. LTD',
@@ -199,7 +199,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                   ),
                   //invoices
                   Padding(
-                    padding: EdgeInsets.fromLTRB(20, 16, 20, 0),
+                    padding: const EdgeInsets.fromLTRB(20, 16, 20, 0),
                     child: Container(
                       width: MediaQuery.of(context).size.width,
                       // height: 440,
@@ -210,7 +210,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                       child: Column(
                         children: [
                           Padding(
-                            padding: EdgeInsets.fromLTRB(20, 15, 20, 5),
+                            padding: const EdgeInsets.fromLTRB(20, 15, 20, 5),
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
@@ -229,7 +229,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                                     decoration: BoxDecoration(
                                       color: Colors.white,
                                       borderRadius: BorderRadius.circular(5),
-                                      boxShadow: [
+                                      boxShadow: const [
                                         BoxShadow(
                                           color: Color(0x19000000),
                                           blurRadius: 5,
@@ -240,7 +240,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                                     ),
                                     child: DropdownButtonHideUnderline(
                                       child: DropdownButton2(
-                                        style: TextStyle(
+                                        style: const TextStyle(
                                           fontWeight: FontWeight.w300,
                                           fontSize: 14,
                                           fontFamily: 'Sans',
@@ -317,14 +317,14 @@ class _DashboardScreenState extends State<DashboardScreen> {
                               ],
                             ),
                           ),
-                          Padding(
-                            padding: const EdgeInsets.fromLTRB(15, 0, 15, 0),
+                          const Padding(
+                            padding: EdgeInsets.fromLTRB(15, 0, 15, 0),
                             child: Divider(
                               thickness: 2,
                             ),
                           ),
                           Padding(
-                            padding: EdgeInsets.fromLTRB(20, 10, 20, 10),
+                            padding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
                             child: FittedBox(
                               child: Row(
                                 mainAxisAlignment:
@@ -339,26 +339,26 @@ class _DashboardScreenState extends State<DashboardScreen> {
                                             CrossAxisAlignment.start,
                                         children: [
                                           Padding(
-                                            padding:
-                                                EdgeInsets.fromLTRB(5, 5, 0, 0),
+                                            padding: const EdgeInsets.fromLTRB(
+                                                5, 5, 0, 0),
                                             child: Container(
                                               height: 10,
                                               width: 10,
                                               decoration: BoxDecoration(
                                                 borderRadius:
                                                     BorderRadius.circular(10),
-                                                color: Color(0xff00E396),
+                                                color: const Color(0xff00E396),
                                               ),
                                             ),
                                           ),
-                                          SizedBox(
+                                          const SizedBox(
                                             width: 8,
                                           ),
                                           Column(
                                             crossAxisAlignment:
                                                 CrossAxisAlignment.start,
                                             children: [
-                                              AutoSizeText(
+                                              const AutoSizeText(
                                                 'Total Raised (GBP)',
                                                 style: TextStyle(
                                                   fontWeight: FontWeight.w600,
@@ -378,13 +378,13 @@ class _DashboardScreenState extends State<DashboardScreen> {
                                               ),
                                               AutoSizeText(
                                                 '£ ${dashboardProvider.summary?.totalRaisedAmount}',
-                                                style: TextStyle(
+                                                style: const TextStyle(
                                                   fontWeight: FontWeight.w600,
                                                   fontFamily: 'Sans',
                                                   fontSize: 14,
                                                   color: Color(0xff00E396),
                                                 ),
-                                                presetFontSizes: [
+                                                presetFontSizes: const [
                                                   14,
                                                   12,
                                                   10,
@@ -408,7 +408,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                                           ),
                                         ],
                                       ),
-                                      SizedBox(
+                                      const SizedBox(
                                         height: 20,
                                       ),
                                       Row(
@@ -416,26 +416,26 @@ class _DashboardScreenState extends State<DashboardScreen> {
                                             CrossAxisAlignment.start,
                                         children: [
                                           Padding(
-                                            padding:
-                                                EdgeInsets.fromLTRB(5, 5, 0, 0),
+                                            padding: const EdgeInsets.fromLTRB(
+                                                5, 5, 0, 0),
                                             child: Container(
                                               height: 10,
                                               width: 10,
                                               decoration: BoxDecoration(
                                                 borderRadius:
                                                     BorderRadius.circular(10),
-                                                color: Color(0xffFF594F),
+                                                color: const Color(0xffFF594F),
                                               ),
                                             ),
                                           ),
-                                          SizedBox(
+                                          const SizedBox(
                                             width: 8,
                                           ),
                                           Column(
                                             crossAxisAlignment:
                                                 CrossAxisAlignment.start,
                                             children: [
-                                              AutoSizeText(
+                                              const AutoSizeText(
                                                 'Total Due (GBP)',
                                                 style: TextStyle(
                                                   fontWeight: FontWeight.w600,
@@ -455,13 +455,13 @@ class _DashboardScreenState extends State<DashboardScreen> {
                                               ),
                                               AutoSizeText(
                                                 '£ ${dashboardProvider.summary?.totalDueAmount}',
-                                                style: TextStyle(
+                                                style: const TextStyle(
                                                   fontWeight: FontWeight.w600,
                                                   fontFamily: 'Sans',
                                                   fontSize: 14,
                                                   color: Color(0xffFF594F),
                                                 ),
-                                                presetFontSizes: [
+                                                presetFontSizes: const [
                                                   14,
                                                   12,
                                                   10,
@@ -488,21 +488,22 @@ class _DashboardScreenState extends State<DashboardScreen> {
                                     ],
                                   ),
                                   Padding(
-                                    padding: EdgeInsets.fromLTRB(5, 0, 0, 0),
+                                    padding:
+                                        const EdgeInsets.fromLTRB(5, 0, 0, 0),
                                     child: Column(
                                       children: [
                                         Container(
                                           height: 37,
                                           width: 1,
-                                          color: Color(0xffDCDFE6),
+                                          color: const Color(0xffDCDFE6),
                                         ),
-                                        SizedBox(
+                                        const SizedBox(
                                           height: 20,
                                         ),
                                         Container(
                                           height: 37,
                                           width: 1,
-                                          color: Color(0xffDCDFE6),
+                                          color: const Color(0xffDCDFE6),
                                         ),
                                       ],
                                     ),
@@ -516,26 +517,26 @@ class _DashboardScreenState extends State<DashboardScreen> {
                                             CrossAxisAlignment.start,
                                         children: [
                                           Padding(
-                                            padding:
-                                                EdgeInsets.fromLTRB(5, 5, 0, 0),
+                                            padding: const EdgeInsets.fromLTRB(
+                                                5, 5, 0, 0),
                                             child: Container(
                                               height: 10,
                                               width: 10,
                                               decoration: BoxDecoration(
                                                 borderRadius:
                                                     BorderRadius.circular(10),
-                                                color: Color(0xff008FFB),
+                                                color: const Color(0xff008FFB),
                                               ),
                                             ),
                                           ),
-                                          SizedBox(
+                                          const SizedBox(
                                             width: 8,
                                           ),
                                           Column(
                                             crossAxisAlignment:
                                                 CrossAxisAlignment.start,
                                             children: [
-                                              AutoSizeText(
+                                              const AutoSizeText(
                                                 'Total Received (GBP)',
                                                 style: TextStyle(
                                                   fontWeight: FontWeight.w600,
@@ -555,13 +556,13 @@ class _DashboardScreenState extends State<DashboardScreen> {
                                               ),
                                               AutoSizeText(
                                                 '£ ${dashboardProvider.summary?.totalReceivedAmount}',
-                                                style: TextStyle(
+                                                style: const TextStyle(
                                                   fontWeight: FontWeight.w600,
                                                   fontFamily: 'Sans',
                                                   fontSize: 14,
                                                   color: Color(0xff008FFB),
                                                 ),
-                                                presetFontSizes: [
+                                                presetFontSizes: const [
                                                   14,
                                                   12,
                                                   10,
@@ -585,7 +586,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                                           ),
                                         ],
                                       ),
-                                      SizedBox(
+                                      const SizedBox(
                                         height: 20,
                                       ),
                                       Row(
@@ -593,26 +594,26 @@ class _DashboardScreenState extends State<DashboardScreen> {
                                             CrossAxisAlignment.start,
                                         children: [
                                           Padding(
-                                            padding:
-                                                EdgeInsets.fromLTRB(5, 5, 0, 0),
+                                            padding: const EdgeInsets.fromLTRB(
+                                                5, 5, 0, 0),
                                             child: Container(
                                               height: 10,
                                               width: 10,
                                               decoration: BoxDecoration(
                                                 borderRadius:
                                                     BorderRadius.circular(10),
-                                                color: Color(0xffFF594F),
+                                                color: const Color(0xffFF594F),
                                               ),
                                             ),
                                           ),
-                                          SizedBox(
+                                          const SizedBox(
                                             width: 8,
                                           ),
                                           Column(
                                             crossAxisAlignment:
                                                 CrossAxisAlignment.start,
                                             children: [
-                                              AutoSizeText(
+                                              const AutoSizeText(
                                                 'Total OverDue (GBP)',
                                                 style: TextStyle(
                                                   fontWeight: FontWeight.w600,
@@ -632,13 +633,13 @@ class _DashboardScreenState extends State<DashboardScreen> {
                                               ),
                                               AutoSizeText(
                                                 '£ ${dashboardProvider.summary?.totalOverDueAmount}',
-                                                style: TextStyle(
+                                                style: const TextStyle(
                                                   fontWeight: FontWeight.w600,
                                                   fontFamily: 'Sans',
                                                   fontSize: 14,
                                                   color: Color(0xffFF594F),
                                                 ),
-                                                presetFontSizes: [
+                                                presetFontSizes: const [
                                                   14,
                                                   12,
                                                   10,
@@ -669,7 +670,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                             ),
                           ),
                           Padding(
-                            padding: EdgeInsets.fromLTRB(20, 10, 20, 10),
+                            padding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
                             child: SizedBox(
                               height: 230,
                               child: SfCartesianChart(
@@ -779,7 +780,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                   ),
                   //bank accounts
                   Padding(
-                    padding: EdgeInsets.fromLTRB(20, 16, 20, 0),
+                    padding: const EdgeInsets.fromLTRB(20, 16, 20, 0),
                     child: Container(
                       width: MediaQuery.of(context).size.width,
                       // height: 366,
@@ -790,7 +791,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                       child: Column(
                         children: [
                           Padding(
-                            padding: EdgeInsets.fromLTRB(20, 20, 20, 5),
+                            padding: const EdgeInsets.fromLTRB(20, 20, 20, 5),
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
@@ -806,14 +807,14 @@ class _DashboardScreenState extends State<DashboardScreen> {
                               ],
                             ),
                           ),
-                          Padding(
-                            padding: const EdgeInsets.fromLTRB(15, 0, 15, 0),
+                          const Padding(
+                            padding: EdgeInsets.fromLTRB(15, 0, 15, 0),
                             child: Divider(
                               thickness: 2,
                             ),
                           ),
                           dashboardProvider.bankDashboard.isEmpty
-                              ? Padding(
+                              ? const Padding(
                                   padding: EdgeInsets.fromLTRB(0, 100, 0, 100),
                                   child: Text(
                                     'No records found',
@@ -833,9 +834,9 @@ class _DashboardScreenState extends State<DashboardScreen> {
                                             dashboardProvider
                                                 .bankDashboard.length, (index) {
                                           return Padding(
-                                            padding: EdgeInsets.fromLTRB(
+                                            padding: const EdgeInsets.fromLTRB(
                                                 20, 0, 20, 0),
-                                            child: Container(
+                                            child: SizedBox(
                                               width: MediaQuery.of(context)
                                                       .size
                                                       .width -
@@ -843,9 +844,9 @@ class _DashboardScreenState extends State<DashboardScreen> {
                                               child: Column(
                                                 children: [
                                                   Padding(
-                                                    padding:
-                                                        EdgeInsets.fromLTRB(
-                                                            20, 10, 20, 0),
+                                                    padding: const EdgeInsets
+                                                            .fromLTRB(
+                                                        20, 10, 20, 0),
                                                     child: Row(
                                                       mainAxisAlignment:
                                                           MainAxisAlignment
@@ -857,7 +858,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                                                               svgPath:
                                                                   'assets/bank_account.svg',
                                                             ),
-                                                            SizedBox(
+                                                            const SizedBox(
                                                               width: 8,
                                                             ),
                                                             Column(
@@ -865,7 +866,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                                                                   CrossAxisAlignment
                                                                       .start,
                                                               children: [
-                                                                Container(
+                                                                SizedBox(
                                                                   width: 200,
                                                                   child: Text(
                                                                     dashboardProvider
@@ -915,9 +916,8 @@ class _DashboardScreenState extends State<DashboardScreen> {
                                                     ),
                                                   ),
                                                   Padding(
-                                                    padding:
-                                                        EdgeInsets.fromLTRB(
-                                                            0, 40, 0, 25),
+                                                    padding: const EdgeInsets
+                                                        .fromLTRB(0, 40, 0, 25),
                                                     child: Row(
                                                       mainAxisAlignment:
                                                           MainAxisAlignment
@@ -926,7 +926,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                                                         if (index > 0)
                                                           IconButton(
                                                               onPressed: () {},
-                                                              icon: Icon(
+                                                              icon: const Icon(
                                                                 Icons
                                                                     .arrow_back_ios_new_rounded,
                                                                 color: Color(
@@ -937,14 +937,14 @@ class _DashboardScreenState extends State<DashboardScreen> {
                                                             padding:
                                                                 const EdgeInsets
                                                                     .all(8.0),
-                                                            child: Container(
+                                                            child: SizedBox(
                                                               height: 24,
                                                               width: 24,
                                                             ),
                                                           ),
                                                         Column(
                                                           children: [
-                                                            Text(
+                                                            const Text(
                                                               'Money In',
                                                               style: TextStyle(
                                                                 fontSize: 12,
@@ -957,7 +957,8 @@ class _DashboardScreenState extends State<DashboardScreen> {
                                                             ),
                                                             Text(
                                                               '£ ${dashboardProvider.bankDashboard[index].credited}',
-                                                              style: TextStyle(
+                                                              style:
+                                                                  const TextStyle(
                                                                 fontWeight:
                                                                     FontWeight
                                                                         .w600,
@@ -966,10 +967,10 @@ class _DashboardScreenState extends State<DashboardScreen> {
                                                                     'Sans',
                                                               ),
                                                             ),
-                                                            SizedBox(
+                                                            const SizedBox(
                                                               height: 25,
                                                             ),
-                                                            Text(
+                                                            const Text(
                                                               'Money Out',
                                                               style: TextStyle(
                                                                 fontSize: 12,
@@ -982,7 +983,8 @@ class _DashboardScreenState extends State<DashboardScreen> {
                                                             ),
                                                             Text(
                                                               '£ ${dashboardProvider.bankDashboard[index].debited}',
-                                                              style: TextStyle(
+                                                              style:
+                                                                  const TextStyle(
                                                                 fontWeight:
                                                                     FontWeight
                                                                         .w600,
@@ -1000,7 +1002,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                                                                 1)
                                                           IconButton(
                                                               onPressed: () {},
-                                                              icon: Icon(
+                                                              icon: const Icon(
                                                                 Icons
                                                                     .arrow_forward_ios_rounded,
                                                                 color: Color(
@@ -1015,7 +1017,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                                                             padding:
                                                                 const EdgeInsets
                                                                     .all(8.0),
-                                                            child: Container(
+                                                            child: SizedBox(
                                                               height: 24,
                                                               width: 24,
                                                             ),
@@ -1030,14 +1032,14 @@ class _DashboardScreenState extends State<DashboardScreen> {
                                         }),
                                       ),
                                     ),
-                                    Padding(
-                                      padding: const EdgeInsets.fromLTRB(
-                                          15, 0, 15, 10),
+                                    const Padding(
+                                      padding:
+                                          EdgeInsets.fromLTRB(15, 0, 15, 10),
                                       child: Divider(
                                         thickness: 2,
                                       ),
                                     ),
-                                    Padding(
+                                    const Padding(
                                       padding: EdgeInsets.fromLTRB(0, 0, 0, 20),
                                       child: Column(
                                         children: [
@@ -1068,7 +1070,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                   ),
                   //top earners
                   Padding(
-                    padding: EdgeInsets.fromLTRB(20, 16, 20, 0),
+                    padding: const EdgeInsets.fromLTRB(20, 16, 20, 0),
                     child: Container(
                       width: MediaQuery.of(context).size.width,
                       height: 435,
@@ -1079,7 +1081,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                       child: Column(
                         children: [
                           Padding(
-                            padding: EdgeInsets.fromLTRB(20, 15, 20, 5),
+                            padding: const EdgeInsets.fromLTRB(20, 15, 20, 5),
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
@@ -1098,7 +1100,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                                     decoration: BoxDecoration(
                                       color: Colors.white,
                                       borderRadius: BorderRadius.circular(5),
-                                      boxShadow: [
+                                      boxShadow: const [
                                         BoxShadow(
                                           color: Color(0x19000000),
                                           blurRadius: 5,
@@ -1109,7 +1111,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                                     ),
                                     child: DropdownButtonHideUnderline(
                                       child: DropdownButton2(
-                                        style: TextStyle(
+                                        style: const TextStyle(
                                           fontWeight: FontWeight.w300,
                                           fontSize: 14,
                                           fontFamily: 'Sans',
@@ -1186,14 +1188,14 @@ class _DashboardScreenState extends State<DashboardScreen> {
                               ],
                             ),
                           ),
-                          Padding(
-                            padding: const EdgeInsets.fromLTRB(15, 0, 15, 0),
+                          const Padding(
+                            padding: EdgeInsets.fromLTRB(15, 0, 15, 0),
                             child: Divider(
                               thickness: 2,
                             ),
                           ),
                           dashboardProvider.topEarning.isEmpty
-                              ? Padding(
+                              ? const Padding(
                                   padding: EdgeInsets.fromLTRB(0, 150, 0, 0),
                                   child: Text(
                                     'No records found',
@@ -1242,8 +1244,8 @@ class _DashboardScreenState extends State<DashboardScreen> {
                                       ],
                                     ),
                                     Padding(
-                                      padding:
-                                          EdgeInsets.fromLTRB(20, 0, 20, 10),
+                                      padding: const EdgeInsets.fromLTRB(
+                                          20, 0, 20, 10),
                                       child: Row(
                                         mainAxisAlignment:
                                             MainAxisAlignment.spaceBetween,
@@ -1261,11 +1263,11 @@ class _DashboardScreenState extends State<DashboardScreen> {
                                                       index % colors.length],
                                                 ),
                                               ),
-                                              SizedBox(width: 5),
+                                              const SizedBox(width: 5),
                                               Text(
                                                 topEarnersData![index]
                                                     .clientName,
-                                                style: TextStyle(
+                                                style: const TextStyle(
                                                   fontFamily: 'Sans',
                                                   fontWeight: FontWeight.w400,
                                                   fontSize: 14,
@@ -1284,7 +1286,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                   ),
                   //top expense categories
                   Padding(
-                    padding: EdgeInsets.fromLTRB(20, 16, 20, 0),
+                    padding: const EdgeInsets.fromLTRB(20, 16, 20, 0),
                     child: Container(
                       width: MediaQuery.of(context).size.width,
                       decoration: BoxDecoration(
@@ -1294,7 +1296,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                       child: Column(
                         children: [
                           Padding(
-                            padding: EdgeInsets.fromLTRB(20, 15, 20, 5),
+                            padding: const EdgeInsets.fromLTRB(20, 15, 20, 5),
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
@@ -1318,7 +1320,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                                     decoration: BoxDecoration(
                                       color: Colors.white,
                                       borderRadius: BorderRadius.circular(5),
-                                      boxShadow: [
+                                      boxShadow: const [
                                         BoxShadow(
                                           color: Color(0x19000000),
                                           blurRadius: 5,
@@ -1329,7 +1331,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                                     ),
                                     child: DropdownButtonHideUnderline(
                                       child: DropdownButton2(
-                                        style: TextStyle(
+                                        style: const TextStyle(
                                           fontWeight: FontWeight.w300,
                                           fontSize: 14,
                                           fontFamily: 'Sans',
@@ -1414,14 +1416,14 @@ class _DashboardScreenState extends State<DashboardScreen> {
                               ],
                             ),
                           ),
-                          Padding(
-                            padding: const EdgeInsets.fromLTRB(15, 0, 15, 0),
+                          const Padding(
+                            padding: EdgeInsets.fromLTRB(15, 0, 15, 0),
                             child: Divider(
                               thickness: 2,
                             ),
                           ),
                           dashboardProvider.topExpenses.isEmpty
-                              ? Padding(
+                              ? const Padding(
                                   padding: EdgeInsets.fromLTRB(0, 150, 0, 150),
                                   child: Text(
                                     'No records found',
@@ -1477,8 +1479,8 @@ class _DashboardScreenState extends State<DashboardScreen> {
                                       ),
                                     ),
                                     Padding(
-                                      padding:
-                                          EdgeInsets.fromLTRB(20, 0, 20, 20),
+                                      padding: const EdgeInsets.fromLTRB(
+                                          20, 0, 20, 20),
                                       child: Row(
                                         mainAxisAlignment:
                                             MainAxisAlignment.spaceBetween,
@@ -1496,10 +1498,10 @@ class _DashboardScreenState extends State<DashboardScreen> {
                                                       index % colors.length],
                                                 ),
                                               ),
-                                              SizedBox(width: 5),
+                                              const SizedBox(width: 5),
                                               Text(
                                                 topExpenseCategories![index].x,
-                                                style: TextStyle(
+                                                style: const TextStyle(
                                                   fontFamily: 'Sans',
                                                   fontWeight: FontWeight.w400,
                                                   fontSize: 14,
@@ -1518,7 +1520,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                   ),
                   //transactions
                   Padding(
-                    padding: EdgeInsets.fromLTRB(20, 16, 20, 40),
+                    padding: const EdgeInsets.fromLTRB(20, 16, 20, 40),
                     child: Container(
                       width: MediaQuery.of(context).size.width,
                       height: 526,
@@ -1529,7 +1531,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                       child: Column(
                         children: [
                           Padding(
-                            padding: EdgeInsets.fromLTRB(20, 15, 20, 5),
+                            padding: const EdgeInsets.fromLTRB(20, 15, 20, 5),
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
@@ -1548,7 +1550,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                                     decoration: BoxDecoration(
                                       color: Colors.white,
                                       borderRadius: BorderRadius.circular(5),
-                                      boxShadow: [
+                                      boxShadow: const [
                                         BoxShadow(
                                           color: Color(0x19000000),
                                           blurRadius: 5,
@@ -1559,7 +1561,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                                     ),
                                     child: DropdownButtonHideUnderline(
                                       child: DropdownButton2(
-                                        style: TextStyle(
+                                        style: const TextStyle(
                                           fontWeight: FontWeight.w300,
                                           fontSize: 14,
                                           fontFamily: 'Sans',
@@ -1660,14 +1662,14 @@ class _DashboardScreenState extends State<DashboardScreen> {
                               ],
                             ),
                           ),
-                          Padding(
-                            padding: const EdgeInsets.fromLTRB(15, 0, 15, 0),
+                          const Padding(
+                            padding: EdgeInsets.fromLTRB(15, 0, 15, 0),
                             child: Divider(
                               thickness: 2,
                             ),
                           ),
                           dashboardProvider.bankDashboard.isEmpty
-                              ? Padding(
+                              ? const Padding(
                                   padding: EdgeInsets.fromLTRB(0, 180, 0, 0),
                                   child: Text(
                                     'No records found',
@@ -1681,8 +1683,8 @@ class _DashboardScreenState extends State<DashboardScreen> {
                               : Column(
                                   children: [
                                     Padding(
-                                      padding:
-                                          EdgeInsets.fromLTRB(20, 10, 0, 0),
+                                      padding: const EdgeInsets.fromLTRB(
+                                          20, 10, 0, 0),
                                       child: Row(
                                         children: [
                                           Container(
@@ -1691,7 +1693,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                                                 color: Colors.white,
                                                 borderRadius:
                                                     BorderRadius.circular(5),
-                                                boxShadow: [
+                                                boxShadow: const [
                                                   BoxShadow(
                                                     color: Color(0x19000000),
                                                     blurRadius: 5,
@@ -1703,7 +1705,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                                               child:
                                                   DropdownButtonHideUnderline(
                                                 child: DropdownButton2(
-                                                  style: TextStyle(
+                                                  style: const TextStyle(
                                                     fontWeight: FontWeight.w300,
                                                     fontSize: 14,
                                                     fontFamily: 'Sans',
@@ -1858,8 +1860,8 @@ class _DashboardScreenState extends State<DashboardScreen> {
                                     //   ),
                                     // ),
                                     Padding(
-                                      padding:
-                                          EdgeInsets.fromLTRB(0, 20, 0, 10),
+                                      padding: const EdgeInsets.fromLTRB(
+                                          0, 20, 0, 10),
                                       child: SizedBox(
                                         height: 340,
                                         child: SfCartesianChart(
@@ -1895,7 +1897,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                                                   double.parse(sales.credit),
                                               pointColorMapper:
                                                   (_TransactionData sales, _) =>
-                                                      Color(0xffAB60CC),
+                                                      const Color(0xffAB60CC),
                                               name: 'Gold',
                                             ),
                                             ColumnSeries<_TransactionData,
@@ -1912,7 +1914,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                                                       double.parse(sales.debit),
                                               pointColorMapper:
                                                   (_TransactionData sales, _) =>
-                                                      Color(0xff7761CD),
+                                                      const Color(0xff7761CD),
                                               name: 'Silver',
                                             ),
                                           ],
@@ -1921,8 +1923,8 @@ class _DashboardScreenState extends State<DashboardScreen> {
                                     ),
 
                                     Padding(
-                                      padding:
-                                          EdgeInsets.fromLTRB(20, 0, 0, 10),
+                                      padding: const EdgeInsets.fromLTRB(
+                                          20, 0, 0, 10),
                                       child: Row(
                                         children: [
                                           Row(
@@ -1933,13 +1935,14 @@ class _DashboardScreenState extends State<DashboardScreen> {
                                                 decoration: BoxDecoration(
                                                   borderRadius:
                                                       BorderRadius.circular(10),
-                                                  color: Color(0xffAB60CC),
+                                                  color:
+                                                      const Color(0xffAB60CC),
                                                 ),
                                               ),
-                                              SizedBox(
+                                              const SizedBox(
                                                 width: 5,
                                               ),
-                                              Text(
+                                              const Text(
                                                 'Money In',
                                                 style: TextStyle(
                                                   fontFamily: 'Sans',
@@ -1949,7 +1952,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                                               ),
                                             ],
                                           ),
-                                          SizedBox(
+                                          const SizedBox(
                                             width: 40,
                                           ),
                                           Row(
@@ -1960,13 +1963,14 @@ class _DashboardScreenState extends State<DashboardScreen> {
                                                 decoration: BoxDecoration(
                                                   borderRadius:
                                                       BorderRadius.circular(10),
-                                                  color: Color(0xff7761CD),
+                                                  color:
+                                                      const Color(0xff7761CD),
                                                 ),
                                               ),
-                                              SizedBox(
+                                              const SizedBox(
                                                 width: 5,
                                               ),
-                                              Text(
+                                              const Text(
                                                 'Money Out',
                                                 style: TextStyle(
                                                   fontFamily: 'Sans',
@@ -1988,7 +1992,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                 ],
               ),
             )
-          : Column(
+          : const Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Center(

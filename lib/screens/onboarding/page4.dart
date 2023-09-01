@@ -5,7 +5,7 @@ import '../../widgets/common_image_view.dart';
 import '../../widgets/custom_onboarding_text_field.dart';
 
 class Page4 extends StatefulWidget {
-  Page4({Key? key}) : super(key: key);
+  const Page4({Key? key}) : super(key: key);
 
   @override
   State<Page4> createState() => _Page4State();
@@ -31,7 +31,7 @@ class _Page4State extends State<Page4> {
     return Column(
       children: [
         Padding(
-          padding: EdgeInsets.fromLTRB(0, 0, 0, 20),
+          padding: const EdgeInsets.fromLTRB(0, 0, 0, 20),
           child: CommonImageView(
             imagePath: 'assets/page4.png',
             height: 200,
@@ -40,16 +40,16 @@ class _Page4State extends State<Page4> {
         Expanded(
           child: Container(
             width: MediaQuery.of(context).size.width,
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               color: Colors.white,
             ),
             child: SingleChildScrollView(
               child: Padding(
-                padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
+                padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Padding(
+                    const Padding(
                       padding: EdgeInsets.fromLTRB(0, 20, 0, 10),
                       child: Text(
                         'Hello, Elina Ray!',
@@ -61,7 +61,7 @@ class _Page4State extends State<Page4> {
                         ),
                       ),
                     ),
-                    Text(
+                    const Text(
                       'Help us to know little about your business',
                       style: TextStyle(
                         color: Color(0xFF6B7280),
@@ -70,7 +70,7 @@ class _Page4State extends State<Page4> {
                         fontWeight: FontWeight.w400,
                       ),
                     ),
-                    Padding(
+                    const Padding(
                       padding: EdgeInsets.fromLTRB(0, 20, 0, 0),
                       child: Text(
                         'What’s your primary industry?',
@@ -83,19 +83,19 @@ class _Page4State extends State<Page4> {
                       ),
                     ),
                     Padding(
-                      padding: EdgeInsets.fromLTRB(0, 10, 0, 10),
+                      padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
                       child: Container(
                           height: 48,
                           width: MediaQuery.of(context).size.width,
                           decoration: BoxDecoration(
                               color: Colors.white,
                               borderRadius: BorderRadius.circular(5),
-                              boxShadow: [
+                              boxShadow: const [
                                 BoxShadow(blurRadius: 1, spreadRadius: 0.1)
                               ]),
                           child: DropdownButtonHideUnderline(
                             child: DropdownButton2(
-                              style: TextStyle(
+                              style: const TextStyle(
                                 fontWeight: FontWeight.w300,
                                 fontSize: 14,
                                 fontFamily: 'Sans',
@@ -117,7 +117,7 @@ class _Page4State extends State<Page4> {
                             ),
                           )),
                     ),
-                    Text(
+                    const Text(
                       'Please choose your company type and enter the name of business.',
                       style: TextStyle(
                         color: Color(0xFF111111),
@@ -126,7 +126,7 @@ class _Page4State extends State<Page4> {
                         fontWeight: FontWeight.w400,
                       ),
                     ),
-                    Padding(
+                    const Padding(
                       padding: EdgeInsets.fromLTRB(0, 10, 0, 0),
                       child: Text(
                         'If your business is a limited company a search of companies house will take place to get info.',
@@ -139,12 +139,12 @@ class _Page4State extends State<Page4> {
                       ),
                     ),
                     Padding(
-                      padding: EdgeInsets.fromLTRB(0, 20, 0, 0),
+                      padding: const EdgeInsets.fromLTRB(0, 20, 0, 0),
                       child: Row(
                         children: [
                           Expanded(
                             child: RadioListTile<int>(
-                              title: Text(
+                              title: const Text(
                                 'Limited Company',
                                 style: TextStyle(
                                   color: Color(0xFF404A5F),
@@ -164,7 +164,7 @@ class _Page4State extends State<Page4> {
                           ),
                           Expanded(
                             child: RadioListTile<int>(
-                              title: Text(
+                              title: const Text(
                                 'Sole Trader',
                                 style: TextStyle(
                                   color: Color(0xFF404A5F),
@@ -188,7 +188,7 @@ class _Page4State extends State<Page4> {
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Padding(
+                        const Padding(
                           padding: EdgeInsets.fromLTRB(0, 10, 0, 0),
                           child: Text(
                             'Registration No',
@@ -201,7 +201,7 @@ class _Page4State extends State<Page4> {
                           ),
                         ),
                         CustomOnboardingTextField(controller: registrationNo),
-                        Padding(
+                        const Padding(
                           padding: EdgeInsets.fromLTRB(0, 10, 0, 0),
                           child: Text(
                             'Company Name',
@@ -216,7 +216,7 @@ class _Page4State extends State<Page4> {
                         CustomOnboardingTextField(controller: registrationNo),
                       ],
                     ),
-                    Padding(
+                    const Padding(
                       padding: EdgeInsets.fromLTRB(0, 30, 0, 40),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,

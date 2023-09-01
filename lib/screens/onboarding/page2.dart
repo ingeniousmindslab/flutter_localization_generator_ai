@@ -13,7 +13,7 @@ class Page2 extends StatelessWidget {
     return Column(
       children: [
         Padding(
-          padding: EdgeInsets.fromLTRB(0, 0, 0, 20),
+          padding: const EdgeInsets.fromLTRB(0, 0, 0, 20),
           child: CommonImageView(
             imagePath: 'assets/page2.png',
             height: 200,
@@ -22,16 +22,16 @@ class Page2 extends StatelessWidget {
         Expanded(
           child: Container(
             width: MediaQuery.of(context).size.width,
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               color: Colors.white,
             ),
             child: SingleChildScrollView(
               child: Padding(
-                padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
+                padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Padding(
+                    const Padding(
                       padding: EdgeInsets.fromLTRB(0, 20, 0, 10),
                       child: Text(
                         'Let’s help us to understand about you',
@@ -43,7 +43,7 @@ class Page2 extends StatelessWidget {
                         ),
                       ),
                     ),
-                    Text(
+                    const Text(
                       'Tell us about your basic information name, contact etc...',
                       style: TextStyle(
                         color: Color(0xFF6B7280),
@@ -52,7 +52,7 @@ class Page2 extends StatelessWidget {
                         fontWeight: FontWeight.w400,
                       ),
                     ),
-                    Padding(
+                    const Padding(
                       padding: EdgeInsets.fromLTRB(0, 10, 0, 0),
                       child: Text(
                         'First Name',
@@ -65,7 +65,7 @@ class Page2 extends StatelessWidget {
                       ),
                     ),
                     CustomOnboardingTextField(controller: name),
-                    Padding(
+                    const Padding(
                       padding: EdgeInsets.fromLTRB(0, 10, 0, 0),
                       child: Text(
                         'Last Name',
@@ -78,7 +78,7 @@ class Page2 extends StatelessWidget {
                       ),
                     ),
                     CustomOnboardingTextField(controller: name),
-                    Padding(
+                    const Padding(
                       padding: EdgeInsets.fromLTRB(0, 10, 0, 0),
                       child: Text(
                         'Phone Number',
@@ -91,7 +91,7 @@ class Page2 extends StatelessWidget {
                       ),
                     ),
                     CustomOnboardingTextField(controller: name),
-                    Padding(
+                    const Padding(
                       padding: EdgeInsets.fromLTRB(0, 30, 0, 40),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,

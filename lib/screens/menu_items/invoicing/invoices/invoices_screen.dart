@@ -36,7 +36,7 @@ class _InvoicesScreenState extends State<InvoicesScreen> {
   Widget build(BuildContext context) {
     final rp = Provider.of<InvoicesProvider>(context, listen: false);
     return Scaffold(
-      backgroundColor: Color(0xffFBFBFB),
+      backgroundColor: const Color(0xffFBFBFB),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
@@ -124,7 +124,7 @@ class _InvoicesScreenState extends State<InvoicesScreen> {
                               borderRadius: BorderRadius.circular(30),
                               color: ColorConstant.primaryColor,
                             ),
-                            child: Center(
+                            child: const Center(
                               child: Text(
                                 'Overdue',
                                 style: TextStyle(
@@ -154,7 +154,7 @@ class _InvoicesScreenState extends State<InvoicesScreen> {
                           ),
                     selectedIndex == 2
                         ? Container(
-                            padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
+                            padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
                             height: 30,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(30),
@@ -190,7 +190,7 @@ class _InvoicesScreenState extends State<InvoicesScreen> {
                           ),
                     selectedIndex == 3
                         ? Container(
-                            padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
+                            padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
                             height: 30,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(30),
@@ -226,7 +226,7 @@ class _InvoicesScreenState extends State<InvoicesScreen> {
                           ),
                     selectedIndex == 4
                         ? Container(
-                            padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
+                            padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
                             height: 30,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(30),
@@ -251,7 +251,7 @@ class _InvoicesScreenState extends State<InvoicesScreen> {
                               });
                               rp.getInvoicesList(6);
                             },
-                            child: Text(
+                            child: const Text(
                               'Partially Paid',
                               style: TextStyle(
                                 fontSize: 14,
@@ -294,10 +294,11 @@ class _InvoicesScreenState extends State<InvoicesScreen> {
                                               )));
                                 },
                                 child: Container(
-                                  padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
+                                  padding:
+                                      const EdgeInsets.fromLTRB(10, 10, 10, 10),
                                   width: MediaQuery.of(context).size.width,
                                   decoration: BoxDecoration(
-                                      boxShadow: [
+                                      boxShadow: const [
                                         BoxShadow(
                                           blurRadius: 1,
                                         )
@@ -336,12 +337,12 @@ class _InvoicesScreenState extends State<InvoicesScreen> {
                                               ),
                                               AutoSizeText(
                                                 e.invoiceNo,
-                                                style: TextStyle(
+                                                style: const TextStyle(
                                                   fontWeight: FontWeight.w600,
                                                   fontSize: 14,
                                                   fontFamily: 'Sans',
                                                 ),
-                                                presetFontSizes: [
+                                                presetFontSizes: const [
                                                   14,
                                                   12,
                                                   10,
@@ -361,9 +362,10 @@ class _InvoicesScreenState extends State<InvoicesScreen> {
                                                 decoration: BoxDecoration(
                                                   borderRadius:
                                                       BorderRadius.circular(5),
-                                                  color: Color(0xffFFDADA),
+                                                  color:
+                                                      const Color(0xffFFDADA),
                                                 ),
-                                                child: Center(
+                                                child: const Center(
                                                   child: AutoSizeText(
                                                     'Overdue',
                                                     style: TextStyle(
@@ -386,14 +388,14 @@ class _InvoicesScreenState extends State<InvoicesScreen> {
                                                   ),
                                                 ),
                                               ),
-                                              Icon(
+                                              const Icon(
                                                 Icons.more_vert,
                                               ),
                                             ],
                                           )
                                         ],
                                       ),
-                                      SizedBox(
+                                      const SizedBox(
                                         height: 10,
                                       ),
                                       Row(
@@ -404,7 +406,7 @@ class _InvoicesScreenState extends State<InvoicesScreen> {
                                             crossAxisAlignment:
                                                 CrossAxisAlignment.start,
                                             children: [
-                                              AutoSizeText(
+                                              const AutoSizeText(
                                                 'Customer',
                                                 style: TextStyle(
                                                   fontWeight: FontWeight.w400,
@@ -424,12 +426,12 @@ class _InvoicesScreenState extends State<InvoicesScreen> {
                                               ),
                                               AutoSizeText(
                                                 e.clientFullName,
-                                                style: TextStyle(
+                                                style: const TextStyle(
                                                   fontWeight: FontWeight.w600,
                                                   fontSize: 14,
                                                   fontFamily: 'Sans',
                                                 ),
-                                                presetFontSizes: [
+                                                presetFontSizes: const [
                                                   14,
                                                   12,
                                                   10,
@@ -445,7 +447,7 @@ class _InvoicesScreenState extends State<InvoicesScreen> {
                                             crossAxisAlignment:
                                                 CrossAxisAlignment.center,
                                             children: [
-                                              AutoSizeText(
+                                              const AutoSizeText(
                                                 'Total (GBP)',
                                                 style: TextStyle(
                                                   fontWeight: FontWeight.w400,
@@ -465,12 +467,12 @@ class _InvoicesScreenState extends State<InvoicesScreen> {
                                               ),
                                               AutoSizeText(
                                                 e.totalAmount.toString(),
-                                                style: TextStyle(
+                                                style: const TextStyle(
                                                   fontWeight: FontWeight.w600,
                                                   fontSize: 14,
                                                   fontFamily: 'Sans',
                                                 ),
-                                                presetFontSizes: [
+                                                presetFontSizes: const [
                                                   14,
                                                   12,
                                                   10,
@@ -486,7 +488,7 @@ class _InvoicesScreenState extends State<InvoicesScreen> {
                                             crossAxisAlignment:
                                                 CrossAxisAlignment.end,
                                             children: [
-                                              AutoSizeText(
+                                              const AutoSizeText(
                                                 'Date',
                                                 style: TextStyle(
                                                   fontWeight: FontWeight.w400,
@@ -507,12 +509,12 @@ class _InvoicesScreenState extends State<InvoicesScreen> {
                                               AutoSizeText(
                                                 e.invoiceDate
                                                     .toDateTimeFormat(),
-                                                style: TextStyle(
+                                                style: const TextStyle(
                                                   fontWeight: FontWeight.w600,
                                                   fontSize: 14,
                                                   fontFamily: 'Sans',
                                                 ),
-                                                presetFontSizes: [
+                                                presetFontSizes: const [
                                                   14,
                                                   12,
                                                   10,
@@ -526,7 +528,7 @@ class _InvoicesScreenState extends State<InvoicesScreen> {
                                           )
                                         ],
                                       ),
-                                      SizedBox(
+                                      const SizedBox(
                                         height: 10,
                                       ),
                                       Row(
@@ -537,7 +539,7 @@ class _InvoicesScreenState extends State<InvoicesScreen> {
                                             crossAxisAlignment:
                                                 CrossAxisAlignment.start,
                                             children: [
-                                              AutoSizeText(
+                                              const AutoSizeText(
                                                 'Amount due (GBP)',
                                                 style: TextStyle(
                                                   fontWeight: FontWeight.w400,
@@ -558,12 +560,12 @@ class _InvoicesScreenState extends State<InvoicesScreen> {
                                               AutoSizeText(
                                                 (e.totalAmount - e.paidAmount)
                                                     .toString(),
-                                                style: TextStyle(
+                                                style: const TextStyle(
                                                   fontWeight: FontWeight.w600,
                                                   fontSize: 14,
                                                   fontFamily: 'Sans',
                                                 ),
-                                                presetFontSizes: [
+                                                presetFontSizes: const [
                                                   14,
                                                   12,
                                                   10,
@@ -579,7 +581,7 @@ class _InvoicesScreenState extends State<InvoicesScreen> {
                                             crossAxisAlignment:
                                                 CrossAxisAlignment.center,
                                             children: [
-                                              AutoSizeText(
+                                              const AutoSizeText(
                                                 'Due (days)',
                                                 style: TextStyle(
                                                   fontWeight: FontWeight.w400,
@@ -603,13 +605,13 @@ class _InvoicesScreenState extends State<InvoicesScreen> {
                                                     .difference(DateTime.now())
                                                     .inDays
                                                     .toString(),
-                                                style: TextStyle(
+                                                style: const TextStyle(
                                                   fontWeight: FontWeight.w600,
                                                   fontSize: 14,
                                                   fontFamily: 'Sans',
                                                   color: Color(0xffFF0000),
                                                 ),
-                                                presetFontSizes: [
+                                                presetFontSizes: const [
                                                   14,
                                                   12,
                                                   10,
@@ -625,7 +627,7 @@ class _InvoicesScreenState extends State<InvoicesScreen> {
                                             crossAxisAlignment:
                                                 CrossAxisAlignment.end,
                                             children: [
-                                              AutoSizeText(
+                                              const AutoSizeText(
                                                 'Last Received on',
                                                 style: TextStyle(
                                                   fontWeight: FontWeight.w400,
@@ -645,12 +647,12 @@ class _InvoicesScreenState extends State<InvoicesScreen> {
                                               ),
                                               AutoSizeText(
                                                 e.paidAmount.toString(),
-                                                style: TextStyle(
+                                                style: const TextStyle(
                                                   fontWeight: FontWeight.w600,
                                                   fontSize: 14,
                                                   fontFamily: 'Sans',
                                                 ),
-                                                presetFontSizes: [
+                                                presetFontSizes: const [
                                                   14,
                                                   12,
                                                   10,
@@ -664,7 +666,7 @@ class _InvoicesScreenState extends State<InvoicesScreen> {
                                           )
                                         ],
                                       ),
-                                      SizedBox(
+                                      const SizedBox(
                                         height: 10,
                                       ),
                                       Row(
@@ -673,7 +675,7 @@ class _InvoicesScreenState extends State<InvoicesScreen> {
                                             crossAxisAlignment:
                                                 CrossAxisAlignment.start,
                                             children: [
-                                              AutoSizeText(
+                                              const AutoSizeText(
                                                 'Sent on',
                                                 style: TextStyle(
                                                   fontWeight: FontWeight.w400,
@@ -693,12 +695,12 @@ class _InvoicesScreenState extends State<InvoicesScreen> {
                                               ),
                                               AutoSizeText(
                                                 e.dueDate.toDateTimeFormat(),
-                                                style: TextStyle(
+                                                style: const TextStyle(
                                                   fontWeight: FontWeight.w600,
                                                   fontSize: 14,
                                                   fontFamily: 'Sans',
                                                 ),
-                                                presetFontSizes: [
+                                                presetFontSizes: const [
                                                   14,
                                                   12,
                                                   10,

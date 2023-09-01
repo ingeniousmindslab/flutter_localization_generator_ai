@@ -13,7 +13,7 @@ class Page3 extends StatelessWidget {
     return Column(
       children: [
         Padding(
-          padding: EdgeInsets.fromLTRB(0, 0, 0, 20),
+          padding: const EdgeInsets.fromLTRB(0, 0, 0, 20),
           child: CommonImageView(
             imagePath: 'assets/page3.png',
             height: 200,
@@ -22,16 +22,16 @@ class Page3 extends StatelessWidget {
         Expanded(
           child: Container(
             width: MediaQuery.of(context).size.width,
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               color: Colors.white,
             ),
             child: SingleChildScrollView(
               child: Padding(
-                padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
+                padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Padding(
+                    const Padding(
                       padding: EdgeInsets.fromLTRB(0, 20, 0, 10),
                       child: Text(
                         'Great Going!',
@@ -43,7 +43,7 @@ class Page3 extends StatelessWidget {
                         ),
                       ),
                     ),
-                    Text(
+                    const Text(
                       'We’ve sent a text message to +71 77234 22442',
                       style: TextStyle(
                         color: Color(0xFF6B7280),
@@ -52,7 +52,7 @@ class Page3 extends StatelessWidget {
                         fontWeight: FontWeight.w400,
                       ),
                     ),
-                    Padding(
+                    const Padding(
                       padding: EdgeInsets.fromLTRB(0, 20, 0, 0),
                       child: Text(
                         'Please type in your one-time code below',
@@ -64,7 +64,7 @@ class Page3 extends StatelessWidget {
                         ),
                       ),
                     ),
-                    Padding(
+                    const Padding(
                       padding: EdgeInsets.fromLTRB(0, 10, 0, 20),
                       child: Text(
                         'It should be in a format like this: 123456',
@@ -77,7 +77,7 @@ class Page3 extends StatelessWidget {
                       ),
                     ),
                     CustomOnboardingTextField(controller: otp),
-                    Padding(
+                    const Padding(
                       padding: EdgeInsets.fromLTRB(0, 30, 0, 40),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,

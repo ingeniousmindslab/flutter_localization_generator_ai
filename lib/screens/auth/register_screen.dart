@@ -26,14 +26,14 @@ class _RegisterScreenState extends State<RegisterScreen> {
   Widget build(BuildContext context) {
     final registerProvider = Provider.of<AuthProvider>(context, listen: false);
     return Scaffold(
-      backgroundColor: Color(0xffFCF9FF),
+      backgroundColor: const Color(0xffFCF9FF),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Padding(
-                padding: EdgeInsets.fromLTRB(20, 30, 0, 0),
+                padding: const EdgeInsets.fromLTRB(20, 30, 0, 0),
                 child: CommonImageView(
                   imagePath: ImageConstant.logoColor,
                   height: getVerticalSize(
@@ -56,10 +56,10 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 ),
               ),
               Padding(
-                padding: EdgeInsets.fromLTRB(0, 10, 0, 0),
+                padding: const EdgeInsets.fromLTRB(0, 10, 0, 0),
                 child: Container(
                   width: MediaQuery.of(context).size.width,
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(30),
                       topRight: Radius.circular(30),
@@ -68,7 +68,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   ),
                   child: Column(
                     children: [
-                      Padding(
+                      const Padding(
                         padding: EdgeInsets.fromLTRB(20, 20, 0, 20),
                         child: Row(
                           children: [
@@ -84,7 +84,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           ],
                         ),
                       ),
-                      Padding(
+                      const Padding(
                         padding: EdgeInsets.fromLTRB(20, 0, 0, 0),
                         child: Row(
                           children: [
@@ -101,18 +101,18 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
+                        padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
                         child: CustomTextField(
                           controller: email,
                           // password: false,
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsets.fromLTRB(10, 0, 0, 0),
+                        padding: const EdgeInsets.fromLTRB(10, 0, 0, 0),
                         child: Row(
                           children: [
                             Checkbox(value: true, onChanged: (value) {}),
-                            Text(
+                            const Text(
                               'Remember Me',
                               style: TextStyle(
                                 color: Color(0xFF5A5A5D),
@@ -143,7 +143,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                       context,
                                       MaterialPageRoute(
                                           builder: (context) =>
-                                              OnBoardingScreen()));
+                                              const OnBoardingScreen()));
                                 } else if (registerProvider.statusCode == 201) {
                                   ShowMToast toast = ShowMToast();
                                   toast.errorToast(context,
@@ -163,9 +163,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             Container(
                               height: 2,
                               width: getHorizontalSize(140),
-                              color: Color(0xffABABAB),
+                              color: const Color(0xffABABAB),
                             ),
-                            Text(
+                            const Text(
                               'OR',
                               style: TextStyle(
                                 fontSize: 16,
@@ -177,24 +177,25 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             Container(
                               height: 2,
                               width: getHorizontalSize(140),
-                              color: Color(0xffABABAB),
+                              color: const Color(0xffABABAB),
                             ),
                           ],
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsets.fromLTRB(20, 0, 20, 25),
+                        padding: const EdgeInsets.fromLTRB(20, 0, 20, 25),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Container(
                                 width: 100,
                                 height: 48,
-                                padding: EdgeInsets.fromLTRB(0, 10, 0, 10),
+                                padding:
+                                    const EdgeInsets.fromLTRB(0, 10, 0, 10),
                                 decoration: ShapeDecoration(
                                   color: Colors.white,
                                   shape: RoundedRectangleBorder(
-                                    side: BorderSide(
+                                    side: const BorderSide(
                                         width: 2, color: Color(0xFFBEBEBF)),
                                     borderRadius: BorderRadius.circular(8),
                                   ),
@@ -205,11 +206,11 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             Container(
                               width: 100,
                               height: 48,
-                              padding: EdgeInsets.fromLTRB(0, 10, 0, 10),
+                              padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
                               decoration: ShapeDecoration(
                                 color: Colors.white,
                                 shape: RoundedRectangleBorder(
-                                  side: BorderSide(
+                                  side: const BorderSide(
                                       width: 2, color: Color(0xFFBEBEBF)),
                                   borderRadius: BorderRadius.circular(8),
                                 ),
@@ -219,11 +220,11 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             Container(
                               width: 100,
                               height: 48,
-                              padding: EdgeInsets.fromLTRB(0, 10, 0, 10),
+                              padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
                               decoration: ShapeDecoration(
                                 color: Colors.white,
                                 shape: RoundedRectangleBorder(
-                                  side: BorderSide(
+                                  side: const BorderSide(
                                       width: 2, color: Color(0xFFBEBEBF)),
                                   borderRadius: BorderRadius.circular(8),
                                 ),
@@ -234,15 +235,15 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsets.fromLTRB(0, 0, 0, 20),
+                        padding: const EdgeInsets.fromLTRB(0, 0, 0, 20),
                         child: GestureDetector(
                           onTap: () {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => LoginScreen()));
+                                    builder: (context) => const LoginScreen()));
                           },
-                          child: Text.rich(
+                          child: const Text.rich(
                             TextSpan(
                               children: [
                                 TextSpan(

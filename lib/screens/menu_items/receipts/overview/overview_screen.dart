@@ -25,7 +25,7 @@ class _OverviewScreenState extends State<OverviewScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xffF2F2F2),
+      backgroundColor: const Color(0xffF2F2F2),
       body: SafeArea(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -33,7 +33,7 @@ class _OverviewScreenState extends State<OverviewScreen> {
             CommonImageView(
               svgPath: 'assets/overview_receipts.svg',
             ),
-            Padding(
+            const Padding(
               padding: EdgeInsets.fromLTRB(20, 20, 20, 0),
               child: Text(
                 'For bringing your receipts here you have to connect with Receipt hub Click on button below to connect with ‘Receipt hub’',
@@ -46,14 +46,14 @@ class _OverviewScreenState extends State<OverviewScreen> {
               ),
             ),
             Padding(
-              padding: EdgeInsets.fromLTRB(0, 20, 0, 0),
+              padding: const EdgeInsets.fromLTRB(0, 20, 0, 0),
               child: Container(
                   height: 53,
                   width: 53,
                   decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(50),
-                      boxShadow: [
+                      boxShadow: const [
                         BoxShadow(
                           color: Color(0x21000000),
                           blurRadius: 15,
@@ -63,7 +63,7 @@ class _OverviewScreenState extends State<OverviewScreen> {
                       ]),
                   child: Image.asset('assets/message_logo_receipts.png')),
             ),
-            Row(
+            const Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 DottedLine(
@@ -79,12 +79,12 @@ class _OverviewScreenState extends State<OverviewScreen> {
                 width: 100,
                 height: 46,
                 decoration: ShapeDecoration(
-                  color: Color(0xFF6D41A1),
+                  color: const Color(0xFF6D41A1),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10),
                   ),
                 ),
-                child: Center(
+                child: const Center(
                   child: Text(
                     'Connect',
                     style: TextStyle(

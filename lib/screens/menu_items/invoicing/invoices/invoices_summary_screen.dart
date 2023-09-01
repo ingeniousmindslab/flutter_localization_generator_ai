@@ -35,8 +35,8 @@ class _InvoicesSummaryScreenState extends State<InvoicesSummaryScreen> {
             onPressed: () {
               Navigator.pop(context);
             },
-            icon: Icon(Icons.arrow_back)),
-        title: Text(
+            icon: const Icon(Icons.arrow_back)),
+        title: const Text(
           'Invoices Summary',
           style: TextStyle(
             fontSize: 18,
@@ -51,7 +51,7 @@ class _InvoicesSummaryScreenState extends State<InvoicesSummaryScreen> {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => NotificationScreen()));
+                        builder: (context) => const NotificationScreen()));
               },
               icon: const Icon(Icons.notifications_none))
         ],
@@ -77,7 +77,7 @@ class _InvoicesSummaryScreenState extends State<InvoicesSummaryScreen> {
                     child: Column(
                       children: [
                         Padding(
-                          padding: EdgeInsets.fromLTRB(20, 20, 20, 20),
+                          padding: const EdgeInsets.fromLTRB(20, 20, 20, 20),
                           child: FittedBox(
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -85,7 +85,7 @@ class _InvoicesSummaryScreenState extends State<InvoicesSummaryScreen> {
                                 Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    Text(
+                                    const Text(
                                       'Total Raised (GBP)',
                                       style: TextStyle(
                                         fontFamily: 'Sans',
@@ -99,20 +99,20 @@ class _InvoicesSummaryScreenState extends State<InvoicesSummaryScreen> {
                                       TextSpan(
                                         text: widget.invoice?.totalAmount
                                             .toString(),
-                                        style: TextStyle(
+                                        style: const TextStyle(
                                           fontSize: 24,
                                           fontWeight: FontWeight.w600,
                                           fontFamily: 'Sans',
                                           color: Colors.black,
                                         ),
                                       ),
-                                      WidgetSpan(
+                                      const WidgetSpan(
                                         child: Icon(
                                           Icons.arrow_drop_up,
                                           color: Color(0xff6EA509),
                                         ),
                                       ),
-                                      TextSpan(
+                                      const TextSpan(
                                         text: '80%',
                                         style: TextStyle(
                                           fontSize: 10,
@@ -124,7 +124,7 @@ class _InvoicesSummaryScreenState extends State<InvoicesSummaryScreen> {
                                     ])),
                                   ],
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   width: 10,
                                 ),
                                 Container(
@@ -133,13 +133,13 @@ class _InvoicesSummaryScreenState extends State<InvoicesSummaryScreen> {
                                     decoration: BoxDecoration(
                                         color: Colors.white,
                                         borderRadius: BorderRadius.circular(5),
-                                        boxShadow: [
+                                        boxShadow: const [
                                           BoxShadow(
                                               blurRadius: 1, spreadRadius: 0.1)
                                         ]),
                                     child: DropdownButtonHideUnderline(
                                       child: DropdownButton2(
-                                        style: TextStyle(
+                                        style: const TextStyle(
                                           fontWeight: FontWeight.w300,
                                           fontSize: 14,
                                           fontFamily: 'Sans',
@@ -172,7 +172,8 @@ class _InvoicesSummaryScreenState extends State<InvoicesSummaryScreen> {
                         Container(
                           height: 68,
                           width: MediaQuery.of(context).size.width,
-                          decoration: BoxDecoration(color: Color(0xffFAF5FF)),
+                          decoration:
+                              const BoxDecoration(color: Color(0xffFAF5FF)),
                           child: Padding(
                             padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
                             child: Column(
@@ -205,7 +206,7 @@ class _InvoicesSummaryScreenState extends State<InvoicesSummaryScreen> {
                                           )
                                         ],
                                       ),
-                                      SizedBox(
+                                      const SizedBox(
                                         width: 20,
                                       ),
                                       Column(
@@ -246,7 +247,7 @@ class _InvoicesSummaryScreenState extends State<InvoicesSummaryScreen> {
                                 Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    Text(
+                                    const Text(
                                       'No. of Customers',
                                       style: TextStyle(
                                         fontWeight: FontWeight.w400,
@@ -255,7 +256,7 @@ class _InvoicesSummaryScreenState extends State<InvoicesSummaryScreen> {
                                       ),
                                     ),
                                     RichText(
-                                        text: TextSpan(children: [
+                                        text: const TextSpan(children: [
                                       TextSpan(
                                         text: '80',
                                         style: TextStyle(
@@ -283,13 +284,13 @@ class _InvoicesSummaryScreenState extends State<InvoicesSummaryScreen> {
                                     ])),
                                   ],
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   width: 20,
                                 ),
                                 Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    Text(
+                                    const Text(
                                       'No. of Invoices',
                                       style: TextStyle(
                                         fontWeight: FontWeight.w400,
@@ -298,7 +299,7 @@ class _InvoicesSummaryScreenState extends State<InvoicesSummaryScreen> {
                                       ),
                                     ),
                                     RichText(
-                                        text: TextSpan(children: [
+                                        text: const TextSpan(children: [
                                       TextSpan(
                                         text: '110',
                                         style: TextStyle(
@@ -335,7 +336,7 @@ class _InvoicesSummaryScreenState extends State<InvoicesSummaryScreen> {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsets.fromLTRB(20, 16, 20, 40),
+                  padding: const EdgeInsets.fromLTRB(20, 16, 20, 40),
                   child: Container(
                     width: MediaQuery.of(context).size.width,
                     height: 420,
@@ -346,7 +347,7 @@ class _InvoicesSummaryScreenState extends State<InvoicesSummaryScreen> {
                     child: Column(
                       children: [
                         Padding(
-                          padding: EdgeInsets.fromLTRB(0, 20, 0, 10),
+                          padding: const EdgeInsets.fromLTRB(0, 20, 0, 10),
                           child: SizedBox(
                             height: 340,
                             child: SfCartesianChart(
@@ -372,15 +373,15 @@ class _InvoicesSummaryScreenState extends State<InvoicesSummaryScreen> {
                                     spacing: 0.2,
                                     dataSource: <ChartSampleData1>[
                                       ChartSampleData1('January', 16, 8, 13,
-                                          Color(0xffAB60CC)),
+                                          const Color(0xffAB60CC)),
                                       ChartSampleData1('Febuary', 8, 10, 7,
-                                          Color(0xffAB60CC)),
+                                          const Color(0xffAB60CC)),
                                       ChartSampleData1('March', 12, 10, 5,
-                                          Color(0xffAB60CC)),
-                                      ChartSampleData1(
-                                          'April', 4, 8, 14, Color(0xffAB60CC)),
-                                      ChartSampleData1(
-                                          'May', 8, 5, 4, Color(0xffAB60CC)),
+                                          const Color(0xffAB60CC)),
+                                      ChartSampleData1('April', 4, 8, 14,
+                                          const Color(0xffAB60CC)),
+                                      ChartSampleData1('May', 8, 5, 4,
+                                          const Color(0xffAB60CC)),
                                     ],
                                     // color: const Color.fromRGBO(251, 193, 55, 1),
                                     xValueMapper: (ChartSampleData1 sales, _) =>
@@ -400,15 +401,15 @@ class _InvoicesSummaryScreenState extends State<InvoicesSummaryScreen> {
                                     spacing: 0.2,
                                     dataSource: <ChartSampleData1>[
                                       ChartSampleData1('January', 16, 8, 13,
-                                          Color(0xff7761CD)),
+                                          const Color(0xff7761CD)),
                                       ChartSampleData1('Febuary', 8, 10, 7,
-                                          Color(0xff7761CD)),
+                                          const Color(0xff7761CD)),
                                       ChartSampleData1('March', 12, 10, 5,
-                                          Color(0xff7761CD)),
-                                      ChartSampleData1(
-                                          'April', 4, 8, 14, Color(0xff7761CD)),
-                                      ChartSampleData1(
-                                          'May', 8, 5, 4, Color(0xff7761CD)),
+                                          const Color(0xff7761CD)),
+                                      ChartSampleData1('April', 4, 8, 14,
+                                          const Color(0xff7761CD)),
+                                      ChartSampleData1('May', 8, 5, 4,
+                                          const Color(0xff7761CD)),
                                     ],
                                     // color: const Color.fromRGBO(251, 193, 55, 1),
                                     xValueMapper: (ChartSampleData1 sales, _) =>
@@ -428,15 +429,15 @@ class _InvoicesSummaryScreenState extends State<InvoicesSummaryScreen> {
                                     spacing: 0.2,
                                     dataSource: <ChartSampleData1>[
                                       ChartSampleData1('January', 16, 8, 13,
-                                          Color(0xff7761CD)),
+                                          const Color(0xff7761CD)),
                                       ChartSampleData1('Febuary', 8, 10, 7,
-                                          Color(0xff7761CD)),
+                                          const Color(0xff7761CD)),
                                       ChartSampleData1('March', 12, 10, 5,
-                                          Color(0xff7761CD)),
-                                      ChartSampleData1(
-                                          'April', 4, 8, 14, Color(0xff7761CD)),
-                                      ChartSampleData1(
-                                          'May', 8, 5, 4, Color(0xff7761CD)),
+                                          const Color(0xff7761CD)),
+                                      ChartSampleData1('April', 4, 8, 14,
+                                          const Color(0xff7761CD)),
+                                      ChartSampleData1('May', 8, 5, 4,
+                                          const Color(0xff7761CD)),
                                     ],
                                     // color: const Color.fromRGBO(251, 193, 55, 1),
                                     xValueMapper: (ChartSampleData1 sales, _) =>
@@ -452,7 +453,7 @@ class _InvoicesSummaryScreenState extends State<InvoicesSummaryScreen> {
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsets.fromLTRB(20, 0, 20, 10),
+                          padding: const EdgeInsets.fromLTRB(20, 0, 20, 10),
                           child: FittedBox(
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -464,13 +465,13 @@ class _InvoicesSummaryScreenState extends State<InvoicesSummaryScreen> {
                                       width: 10,
                                       decoration: BoxDecoration(
                                         borderRadius: BorderRadius.circular(10),
-                                        color: Color(0xff6D37AE),
+                                        color: const Color(0xff6D37AE),
                                       ),
                                     ),
-                                    SizedBox(
+                                    const SizedBox(
                                       width: 5,
                                     ),
-                                    Text(
+                                    const Text(
                                       'Total Received',
                                       style: TextStyle(
                                         fontFamily: 'Sans',
@@ -480,7 +481,7 @@ class _InvoicesSummaryScreenState extends State<InvoicesSummaryScreen> {
                                     ),
                                   ],
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   width: 10,
                                 ),
                                 Row(
@@ -490,13 +491,13 @@ class _InvoicesSummaryScreenState extends State<InvoicesSummaryScreen> {
                                       width: 10,
                                       decoration: BoxDecoration(
                                         borderRadius: BorderRadius.circular(10),
-                                        color: Color(0xff8159C7),
+                                        color: const Color(0xff8159C7),
                                       ),
                                     ),
-                                    SizedBox(
+                                    const SizedBox(
                                       width: 5,
                                     ),
-                                    Text(
+                                    const Text(
                                       'Total Raised',
                                       style: TextStyle(
                                         fontFamily: 'Sans',
@@ -506,7 +507,7 @@ class _InvoicesSummaryScreenState extends State<InvoicesSummaryScreen> {
                                     ),
                                   ],
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   width: 10,
                                 ),
                                 Row(
@@ -516,13 +517,13 @@ class _InvoicesSummaryScreenState extends State<InvoicesSummaryScreen> {
                                       width: 10,
                                       decoration: BoxDecoration(
                                         borderRadius: BorderRadius.circular(10),
-                                        color: Color(0xffB577FF),
+                                        color: const Color(0xffB577FF),
                                       ),
                                     ),
-                                    SizedBox(
+                                    const SizedBox(
                                       width: 5,
                                     ),
-                                    Text(
+                                    const Text(
                                       'Total Due',
                                       style: TextStyle(
                                         fontFamily: 'Sans',
