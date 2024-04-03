@@ -1,0 +1,17 @@
+name: flutter_localization_generator_ai
+version: 1.0.0
+description: A Dart CLI tool for generating localization files for Flutter apps using AI.
+homepage: https://github.com/ingeniousmindslab/flutter_localization_generator_ai
+
+environment:
+  sdk: '>=2.14.0 <4.0.0'
+
+dependencies:
+  google_generative_ai: ^0.2.2
+  args: ^2.4.2
+
+
+dev_dependencies:
+  
+executables:
+  flutter_localization_generator_ai: flutter_localization_generator_ai
